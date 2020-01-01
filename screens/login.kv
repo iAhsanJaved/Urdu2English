@@ -1,0 +1,75 @@
+<LoginScreen>:
+    username: username
+    password: password
+    info: info
+    
+    BoxLayout:
+        id: main_win
+        orientation: "vertical"
+        spacing: 10
+        space_x: self.size[0]/3
+        canvas.before:
+            Color:
+                rgba: (1,1,1, 1)
+            Rectangle:
+                id: main_win_bg
+                size: self.size
+                pos: self.pos
+                source: 'bg.png'
+            
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: main_win.space_x, 10
+            #spacing: 20
+            RelativeLayout:
+                pos: self.parent.pos
+                size: self.parent.size
+
+            Image:
+                source: 'logo.png'
+                size: self.texture_size
+            Label:
+                text: u'[b]Login[/b]'
+                markup: True
+                size_hint_y: None
+                font_size: '20sp'
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 10
+                size_hint_y: None
+                
+
+                Label:
+                    id: info
+                    text: ''
+                    markup: True
+                    size_hint_y: None
+                    height: 20
+                TextInput:
+                    id: username
+                    hint_text: "Username"
+                    multiline: False
+                    focus: True
+                TextInput:
+                    id: password
+                    hint_text: "Password"
+                    multiline: False
+                    password: True
+                    
+            Label:
+                size_hint_y: None
+                height: 20
+            Button:
+                text: "Login"
+                size_hint_y: None
+                height: 40
+                background_color: (.06,.45,.45, 1)
+                background_normal: ''
+                on_release: root.loginBtn()
+            Button:
+                text: "User Registration"
+                size_hint_y: None
+                background_color: (.06,.45,.45, 0)
+                background_normal: ''
+                on_release: root.registerBtn()

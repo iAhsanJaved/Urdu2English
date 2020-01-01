@@ -1,0 +1,48 @@
+<TranslationScreen>:
+    translateResult: translateResult
+    img: img
+    
+    BoxLayout:
+        id: main_win
+        orientation: "vertical"
+        spacing: 7
+        space_x: self.size[0]/3
+        canvas.before:
+            Color:
+                rgba: (1,1,1, 1)
+            Rectangle:
+                id: main_win_bg
+                size: self.size
+                pos: self.pos
+                source: 'bgmain.png'
+            
+        BoxLayout:
+            size_hint_y: None
+            Image:
+                source: 'urdu2eng.png'
+
+        BoxLayout:
+            orientation: 'vertical'
+            #spacing: 20
+            RelativeLayout:
+                pos: self.parent.pos
+                size: self.parent.size
+            Label:
+                id: translateResult
+                text: ''
+                halign: 'center'
+                valign: 'middle'
+                markup: True
+                size_hint_y: None
+            Image:
+                id: img
+                source: 'start.png'
+                on_touch_down: root.translateBtn()
+                size: self.texture_size
+            
+                
+
+                
+                    
+            
+            
