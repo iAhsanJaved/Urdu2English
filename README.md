@@ -5,5 +5,3 @@
 ```
 $ pip install SpeechRecognition kivy googletrans
 ```
-## Results
-![](results/result.PNG)
